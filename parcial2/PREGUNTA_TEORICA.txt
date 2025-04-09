@@ -1,0 +1,29 @@
+Atributos de calidad del microservicio de usuarios
+Escalabilidad
+Este microservicio puede ejecutarse de forma independiente en múltiples contenedores Docker y escalar horizontalmente según la demanda.
+Al estar desacoplado del resto de la arquitectura, se puede replicar fácilmente sin impactar a otros servicios.
+
+Mantenibilidad
+Se aplicó una estructura clara de capas: controlador, servicios, interfaces (Command/Query) y DTOs.
+Esto facilita futuras modificaciones, ya que cada parte tiene una responsabilidad bien definida.
+Además, el uso de Spring Boot y la inyección de dependenciasmejora la legibilidad y mantenibilidad del código.
+
+Interoperabilidad
+El microservicio expone una API REST con formato JSON, lo cual permite que cualquier frontend, aplicación móvil o incluso otro microservicio pueda consumir sus datos sin problemas.
+
+Reusabilidad
+La lógica de gestión de usuarios (crear, obtener, actualizar y listar) puede ser consumida por otros microservicios dentro de una arquitectura más grande
+(por ejemplo, un sistema de pedidos, pagos o autenticación).
+
+Observabilidad
+Gracias a la integración con Swagger (Springdoc OpenAPI), se puede documentar y visualizar fácilmente todos los endpoints expuestos.
+Esto facilita tanto el debugging como el consumo externo del microservicio.
+
+Portabilidad
+El microservicio se ejecuta dentro de un contenedor Docker, lo que permite moverlo fácilmente entre diferentes entornos (desarrollo, pruebas, producción)
+sin necesidad de reconfiguración significativa.
+
+Disponibilidad
+Al ser un componente independiente desplegado en Docker, puede ser monitoreado, reiniciado o replicado
+sin impactar a todo el sistema, lo que mejora su disponibilidad y resiliencia.
+
